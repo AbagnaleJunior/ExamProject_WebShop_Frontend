@@ -1,0 +1,40 @@
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+
+}
+//This changes the thumbnail sizes
+ul li a {
+  height: 19rem;
+  width: 20rem;
+  border: 1px solid whitesmoke;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #e72929;
+}
+
+li a:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.content {
+  padding: .7rem 1rem;
+}
+
+.price {
+  color: #414141;
+
+}
+
+.name {
+  color: #414141;
+}
+

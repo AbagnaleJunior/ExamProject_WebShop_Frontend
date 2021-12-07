@@ -1,0 +1,30 @@
+<app-not-found [visible]="!item" notFoundMessage="Product not found!" resetLinkText="Go back to homepage"></app-not-found>
+
+<div *ngIf="item" class="container">
+  <img [src]="item.imageUrl" [alt]="item.name">
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{item.name}}
+      </span>
+    </div>
+    <div class="rating">
+      <star-rating
+        [value]="item.stars"
+        [totalstars]="5"
+        checkedcolor="red"
+        uncheckedcolor="black"
+        size="30px"
+        [readonly]="true">
+      </star-rating>
+    </div>
+    <div class="tags">
+      <app-tags [itemPageTags]="item.tags" justifyContent="start"></app-tags>
+    </div>
+    <div class="price">
+      <span>
+        {{item.price}} DKK pr. day
+      </span>
+    </div>
+  </div>
+</div>
