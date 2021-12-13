@@ -21,14 +21,14 @@ export class BorrowedItemService {
 
   getAllTags():Tag[] {
     return [
-      {name: 'All', amount: 17},
-      {name: 'Electronics', amount: 5},
+      {name: 'All', amount: 14},
+      {name: 'Electronics', amount: 4},
       {name: 'Vehicle', amount: 2},
       {name: 'Transport', amount: 2},
       {name: 'Car', amount: 1},
       {name: 'Gardening', amount: 3},
-      {name: 'Phones', amount: 1},
-      {name: 'Communication', amount: 1},
+      {name: 'Phones', amount: 0},
+      {name: 'Communication', amount: 0},
       {name: 'Camping', amount: 1},
       {name: 'Nature', amount: 1}
     ]
@@ -76,15 +76,6 @@ export class BorrowedItemService {
         price: 135,
         tags: ['Electronics', 'Gardening'],
         imageUrl: '/assets/Images/plæneklipper.jpg',
-        ownerName: 'Jørgen Hansen',
-        ownerPhoneNumber: '12345678'
-      },
-      {
-        id:5,
-        productName:'Samsung Galaxy S21',
-        price: 250,
-        tags: ['Electronics', 'Phones', 'Communication'],
-        imageUrl: '/assets/Images/samsungs21.jpg',
         ownerName: 'Jørgen Hansen',
         ownerPhoneNumber: '12345678'
       },
