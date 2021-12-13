@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Things} from "../shared/models/things";
 import {ActivatedRoute} from "@angular/router";
-import {BorrowedItemService} from "../services/borrowedstuff/borrowedItem.service";
+import {BorrowedItemService} from "../services/borrowedItem.service";
 
 @Component({
   selector: 'app-item-page',

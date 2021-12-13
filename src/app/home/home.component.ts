@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BorrowedItemService } from "../services/borrowedstuff/borrowedItem.service";
+import { BorrowedItemService } from "../services/borrowedItem.service";
 import { Things } from "../shared/models/things";
 import {ActivatedRoute} from "@angular/router";
 
@@ -22,8 +22,6 @@ export class HomeComponent implements OnInit {
       else
         this.items = this.borrowedItemService.getAll();
     })
-
-
   }
 
 }

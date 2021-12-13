@@ -3,13 +3,19 @@ header {
   padding: 0;
   border-bottom: 1px solid black;
 }
+.companyLogo {
+  display: flex;
+  justify-content: right;
+  resize: vertical;
+}
 
 a{
     color: black;
+    font-weight: bold;
 }
 
 a:hover{
-  background: #e72929;
+  background: #0D6EFD;
   color: white;
 }
 
@@ -19,9 +25,10 @@ a:hover{
   justify-content: space-between;
 }
 
+
+
 a.logo{
-    font-weight: bold;
-    padding: 1em;
+    padding: 2em;
 }
 
 nav ul {
@@ -30,6 +37,6 @@ nav ul {
 }
 
 nav ul li a {
-  padding: 1em;
+  padding: 2em;
   display: inline-block;
 }

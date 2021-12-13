@@ -1,3 +1,4 @@
+<app-header></app-header>
 <app-search></app-search>
 <app-tags></app-tags>
 <app-not-found [visible]="!items || items.length <= 0" resetLinkText="Reset search"></app-not-found>
@@ -5,19 +6,11 @@
   <li *ngFor="let item of items">
     <a routerLink="/item/{{item.id}}">
       <img src="{{item.imageUrl}}" alt="">
-      <div class="content">
-        <div class="name">
-          {{item.name}}
+      <div class="content" id="content">
+        <div class="name" id="name">
+          {{item.productName}}
           </div>
-        <star-rating
-          [value]="item.stars"
-          [totalstars]="5"
-          checkedcolor="red"
-          uncheckedcolor="black"
-          size="24px"
-          [readonly]="true">
-          </star-rating>
-        <div class="price">
+        <div class="price" id="price">
           <span>
             {{item.price}} DKK pr. day
           </span>

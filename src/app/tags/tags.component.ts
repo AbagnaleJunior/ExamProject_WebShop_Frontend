@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Tag} from "../shared/models/tag";
-import {BorrowedItemService} from "../services/borrowedstuff/borrowedItem.service";
+import {BorrowedItemService} from "../services/borrowedItem.service";
 
 @Component({
   selector: 'app-tags',

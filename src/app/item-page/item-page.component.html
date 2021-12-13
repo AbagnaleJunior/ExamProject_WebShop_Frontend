@@ -1,30 +1,31 @@
+<app-header></app-header>
 <app-not-found [visible]="!item" notFoundMessage="Product not found!" resetLinkText="Go back to homepage"></app-not-found>
 
 <div *ngIf="item" class="container">
-  <img [src]="item.imageUrl" [alt]="item.name">
-  <div class="details">
-    <div class="header">
-      <span class="name">
-        {{item.name}}
+  <img [src]="item.imageUrl" [alt]="item.productName">
+  <div class="details" id="details">
+    <div class="header" id="header">
+      <span class="name" id="name">
+        {{item.productName}}
       </span>
     </div>
-    <div class="rating">
-      <star-rating
-        [value]="item.stars"
-        [totalstars]="5"
-        checkedcolor="red"
-        uncheckedcolor="black"
-        size="30px"
-        [readonly]="true">
-      </star-rating>
-    </div>
-    <div class="tags">
+    <div class="tags" id="tags">
       <app-tags [itemPageTags]="item.tags" justifyContent="start"></app-tags>
     </div>
-    <div class="price">
+    <div class="price" id="price">
       <span>
         {{item.price}} DKK pr. day
       </span>
+      <div class="textArea" id="textArea" >
+        <textarea cols="50rem" rows="15" readonly style="resize: none">
+        </textarea>
+      </div>
     </div>
+<div class="ownerName" id="ownerName">
+  Owner name: {{item.ownerName}}
+</div>
+<div class="phoneNumber" id="phoneNumber">
+  Phone number: {{item.ownerPhoneNumber}}
+</div>
   </div>
 </div>

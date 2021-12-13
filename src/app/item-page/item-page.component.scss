@@ -1,9 +1,10 @@
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  margin: 3rem;
+  margin: 2rem;
+  border-radius: 1rem;
+  border-image: fill;
 }
 
 .container > *{
@@ -12,12 +13,11 @@
 }
 
 img {
-  border-radius: 2rem;
+  border-radius: 1rem;
   flex: 1 0;
-  object-fit: cover;
   height: 25rem;
   margin: 1rem;
-  border: 2px solid #555;
+  border: 1px solid #555;
 }
 
 .details {
@@ -26,25 +26,42 @@ img {
   flex-direction: column;
   flex: 1 0;
   border-radius: 3rem;
-  padding: 2rem;
+  padding: 1rem;
   color: black;
-  margin-left: 1rem;
+  margin-left: .1rem;
 }
 
-.details .name {
-  font-size: 2rem;
+.name {
+  font-size: 2.7rem;
   font-weight: bold;
-  margin-bottom: 0rem;
+  margin-top: 5rem;
 
 }
+
 
 .details .price {
   font-size: 1.8rem;
-  margin: 2rem 2rem 2rem 0;
   color: forestgreen;
 }
 
 .details .price::before {
   content: "Price: ";
-  color: darkgrey;
+  color: black;
 }
+
+.details .ownerName {
+  font-size: 1.5rem;
+  color: black;
+  margin-top: 1rem;
+}
+
+.details .phoneNumber {
+  font-size: 1.5rem;
+  color: black;
+  margin-top: 1rem;
+}
+
+#textArea {
+  margin: 1rem 1rem 0 0;
+}
+
