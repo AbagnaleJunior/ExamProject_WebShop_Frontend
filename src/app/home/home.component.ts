@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BorrowedItemService } from "../services/borrowedItem.service";
 import { Things } from "../shared/models/things";
-import {ActivatedRoute} from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -11,6 +11,7 @@ import {ActivatedRoute} from "@angular/router";
 export class HomeComponent implements OnInit {
 
   items:Things[] = [];
+  userName: any;
   constructor(private borrowedItemService:BorrowedItemService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -23,5 +24,4 @@ export class HomeComponent implements OnInit {
         this.items = this.borrowedItemService.getAll();
     })
   }
-
 }

@@ -22,7 +22,8 @@ export class TagsComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.itemPageTags)
-    this.tags = this.borrowedItemService.getAllTags();
+      this.borrowedItemService.getAllTags().then(tags => this.tags = tags);
+   // this.tags = this.borrowedItemService.getAllTags();
   }
 
 }

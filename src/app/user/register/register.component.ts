@@ -4,6 +4,7 @@ import {UserService} from "../../services/user.service";
 import {User} from "../../shared/models/user";
 import * as alertify from 'alertifyjs';
 import {AlertifyService} from "../../services/alertify.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private alertifyService: AlertifyService) { }
+    private alertifyService: AlertifyService,
+    private router: Router) { }
 
   ngOnInit(): void {
     /*this.registrationForm = new FormGroup({
@@ -68,7 +70,7 @@ export class RegisterComponent implements OnInit {
     this.userSubmitted = true;
     if (this.registrationForm.valid) {
      // this.user = Object.assign(this.user, this.registrationForm.value);
-      this.userService.addUser(this.userDate());
+      this.userService.addUser(this.userData());
       this.registrationForm.reset();
       this.userSubmitted = false;
       this.alertifyService.success('Your registration was successful!');
@@ -77,13 +79,17 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  userDate(): User {
+  userData(): User {
     return this.user = {
       userName: this.userName.value,
       password: this.password.value,
       phoneNumber: this.phoneNumber.value,
       email: this.email.value,
     }
+  }
+
+  redirectToLogin() {
+    this.router.navigateByUrl('/')
   }
 
 }

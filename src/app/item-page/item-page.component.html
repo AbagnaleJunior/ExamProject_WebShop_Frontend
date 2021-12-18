@@ -1,6 +1,6 @@
 <app-header></app-header>
 <app-not-found [visible]="!item" notFoundMessage="Product not found!" resetLinkText="Go back to homepage"></app-not-found>
-
+<div class="center">
 <div *ngIf="item" class="container">
   <img [src]="item.imageUrl" [alt]="item.productName">
   <div class="details" id="details">
@@ -16,16 +16,26 @@
       <span>
         {{item.price}} DKK pr. day
       </span>
-      <div class="textArea" id="textArea" >
-        <textarea cols="50rem" rows="15" readonly style="resize: none">
+      <div class="col-auto m-auto" id="textArea" style="resize: none">
+        <textarea cols="30rem" rows="7" readonly>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu ligula non eros dictum aliquet vitae non nulla. Pellentesque purus lorem, maximus eget sodales a, porta nec nunc. Sed nulla metus, varius ac convallis iaculis, fringilla et velit. Duis fringilla urna sit amet turpis pellentesque vulputate. Nam tempor nulla nec faucibus condimentum. Maecenas scelerisque elit at dignissim finibus. Nam eu lorem iaculis elit rhoncus malesuada. Aliquam porttitor augue tortor, eget tempor massa vehicula eu.
         </textarea>
       </div>
+      <div>
+        <span>
+        <div class="namePhone">
+          <div class="ownerName" id="ownerName">
+            Owner name: {{item.ownerFirstName + item.ownerLastName}}
+          </div>
+          <div class="phoneNumber" id="phoneNumber">
+            Phone number: {{item.ownerPhoneNumber}}
+          </div>
+        </div>
+          </span>
+      </div>
     </div>
-<div class="ownerName" id="ownerName">
-  Owner name: {{item.ownerName}}
-</div>
-<div class="phoneNumber" id="phoneNumber">
-  Phone number: {{item.ownerPhoneNumber}}
-</div>
   </div>
 </div>
+</div>
+
+

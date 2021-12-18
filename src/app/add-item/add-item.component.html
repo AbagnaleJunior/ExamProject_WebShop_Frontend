@@ -1,3 +1,80 @@
-<h1>File Upload</h1>
-<input type="file" (change)="onFileSelected($event)">
-<button (click)="onUpload()">Upload</button>
+<header xmlns="http://www.w3.org/1999/html">
+  <img class="companyLogo" src="assets/Images/logo_3.png" (click)="redirectToFrontPage()">
+</header>
+<h1 class="postItemHeader">Post item below</h1>
+<div class="row">
+  <div class="col-auto m-auto">
+    <div class="card m-auto">
+      <div class="card-header">
+        Post item
+      </div>
+      <div class="card-body">
+        <form [formGroup]="addPostForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group col-12">
+            <label for="ownerFirstName" class="form-label">First name:</label>
+            <input type="text" class="form-control" formControlName="ownerFirstName">
+            <span *ngIf="!ownerFirstName.valid && (ownerFirstName.touched)" class="error-block">
+              Please provide a first name
+            </span>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="ownerLastName" class="form-label">Last name:</label>
+            <input type="text" class="form-control" formControlName="ownerLastName">
+            <span *ngIf="!ownerLastName.valid && (ownerLastName.touched)" class="error-block">
+              Please provide a last name
+            </span>
+          </div>
+
+
+          <div class="form-group col-12">
+            <label for="ownerPhoneNumber" class="form-label">Phone number:</label>
+            <input type="text" class="form-control" formControlName="ownerPhoneNumber">
+            <span *ngIf="!ownerPhoneNumber.valid && (ownerPhoneNumber.touched)">
+              <span *ngIf="ownerPhoneNumber.hasError('required')" class="error-block">
+                Please provide a phone number
+              </span>
+            </span>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="price" class="form-label">Price:</label>
+            <input type="text" class="form-control" formControlName="price">
+            <span *ngIf="!price.valid && (price.touched)" class="error-block">
+              Please provide a price
+            </span>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="productName" class="form-label">Product name:</label>
+            <input type="text" class="form-control" formControlName="productName">
+            <span *ngIf="!productName.valid && (productName.touched)" class="error-block">
+              Please provide a product name
+            </span>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="description" class="form-label">Description:</label>
+            <textarea class="form-control" formControlName="description"cols="35rem" rows="3"
+                      style="resize: vertical"></textarea>
+            <span *ngIf="!description.valid && (description.touched)" class="error-block">
+              Please provide a description
+            </span>
+          </div>
+
+
+          <div class="form-group col-12">
+            <br>
+            <button type="submit" class="btn btn-primary">Post item</button>
+            <button type="reset" class="btn btn-secondary">Cancel</button>
+            <button type="button" class="btn btn-dark" (click)="redirectToFrontPage()">Return to home</button>
+          </div>
+
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

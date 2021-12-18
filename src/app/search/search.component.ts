@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class SearchComponent implements OnInit {
 
   searchTerm:string = "";
+
   constructor(private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
@@ -25,3 +26,5 @@ export class SearchComponent implements OnInit {
   }
 
 }
+
+

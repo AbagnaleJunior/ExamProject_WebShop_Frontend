@@ -1,7 +1,16 @@
+.companyLogo {
+  margin-left: 2rem;
+}
+
 .registerHeader {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+}
+
+
+
+.form-group.col-12 {
+
 }
 
 div.row {
@@ -9,5 +18,9 @@ div.row {
 }
 
 button.btn-primary {
-  margin-right: .5rem;
+  margin-right: .3rem;
+}
+
+.btn-dark {
+  margin-left: .3rem;
 }

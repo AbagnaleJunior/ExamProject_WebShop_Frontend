@@ -1,10 +1,12 @@
-export class Things {
+export interface Things {
 
-  id!: number;
-  ownerName!:string;
-  ownerPhoneNumber!:string;
-  productName!:string;
-  price!:number;
+  id?: number;
+  ownerFirstName:string;
+  ownerLastName:string;
+  ownerPhoneNumber:number;
+  productName:string;
+  price:number;
   tags?:string[];
-  imageUrl!:string;
+  imageUrl:string;
+  description:string;
 }

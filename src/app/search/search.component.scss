@@ -1,6 +1,6 @@
 div {
   display: flex;
-  margin-left: 57rem;
+  justify-content: center;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
 }
@@ -19,7 +19,6 @@ div input {
 }
 
 div button {
-  color: grey;
   height: 3rem;
   width: 5rem;
   font-size: 1rem;
@@ -29,7 +28,6 @@ div button {
   color: white;
   opacity: .9;
   outline: none;
-
 
 }
 

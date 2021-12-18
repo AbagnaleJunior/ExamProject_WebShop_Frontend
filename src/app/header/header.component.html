@@ -1,7 +1,36 @@
+<body>
+<!-- Start of the header -->
 <header>
-  <div class="container">
-    <a href="#" routerLink="/" class="logo" (click)="frontPage()">Front page</a>
-    <img (click)="frontPage()" class="logo" src="assets/Images/EveryShareLogo_companyLogo.png">
+  <div class="inner">
+    <div class="logo">
+      <div>
+        <!-- The below line can be an image or a h1, either will work -->
+        <img (click)="frontPage()" class="companyLogo" src="assets/Images/logo_3.png">
+        <!-- <h1>My Logo</h1> -->
+      </div>
+    </div>
+
+    <nav>
+      <!-- Each of the below lines look complicated. There is a reason for this markup though!
+      <li> tag will be the container for the table.
+      <span> will be the part that centers the content inside it
+      <a> is the actual clickable part -->
+      <li><span><a href="#" routerLink="/add-item" class="post" (click)="postPage()">Post item</a></span></li>
+      <li><span><a href="#" class="logout" (click)="onLogout()">Logout</a></span></li>
+      <!-- On the line above, remove the class="button" if you don't want the final
+      element to be a button -->
+    </nav>
+  </div>
+</header>
+<!-- End of the header -->
+</body>
+
+<!--
+<header>
+  <div class="container" >
+    <div>
+      <img (click)="frontPage()" class="companyLogo" src="assets/Images/logo_3.png">
+    </div>
     <nav>
       <ul>
         <li>
@@ -12,3 +41,4 @@
     </nav>
   </div>
 </header>
+-->

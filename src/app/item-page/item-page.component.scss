@@ -1,10 +1,16 @@
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
 .container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  margin: 2rem;
-  border-radius: 1rem;
+  margin: 2rem 2rem 2rem 2rem;
+  border-radius: 0rem;
   border-image: fill;
+  vertical-align: middle;
 }
 
 .container > *{
@@ -15,9 +21,11 @@
 img {
   border-radius: 1rem;
   flex: 1 0;
-  height: 25rem;
-  margin: 1rem;
+  height: 100%;
+  max-width: 100%;
+  margin: 1rem 1rem 1rem 1rem;
   border: 1px solid #555;
+
 }
 
 .details {
@@ -49,13 +57,13 @@ img {
   color: black;
 }
 
-.details .ownerName {
+.ownerName {
   font-size: 1.5rem;
   color: black;
   margin-top: 1rem;
 }
 
-.details .phoneNumber {
+.phoneNumber {
   font-size: 1.5rem;
   color: black;
   margin-top: 1rem;
@@ -63,5 +71,6 @@ img {
 
 #textArea {
   margin: 1rem 1rem 0 0;
+  font-size: 20px;
 }
 

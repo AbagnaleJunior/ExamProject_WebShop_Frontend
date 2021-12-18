@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Things } from "../shared/models/things";
 import {Tag} from "../shared/models/tag";
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,11 +16,23 @@ export class BorrowedItemService {
 
   getAllItemsBySearchTerm(searchTerm:string): Things[] {
     return this.getAll().filter(item =>
-      item.productName.toLowerCase().includes(searchTerm.toLowerCase()));
+      item.productName?.toLowerCase().includes(searchTerm.toLowerCase()));
 
   }
 
-  getAllTags():Tag[] {
+  getAllTags():Promise<Tag[]> {
+
+    return fetch('api/ProductCategory')
+      .then(response => response.json())
+      .then(data => {
+
+        // let tags:Tag[] = data;
+        // return tags
+        return <Tag[]> data;
+
+      });
+/*
+  getAllTags(): Tag[] {
     return [
       {name: 'All', amount: 14},
       {name: 'Electronics', amount: 4},
@@ -32,7 +45,7 @@ export class BorrowedItemService {
       {name: 'Camping', amount: 1},
       {name: 'Nature', amount: 1}
     ]
-
+*/
   }
 
   getAllItemsByTag(tag: string): Things[] {
@@ -41,7 +54,10 @@ export class BorrowedItemService {
       this.getAll().filter(item => item.tags?.includes(tag));
   }
 
-  getAll():Things[]{
+
+
+
+  getAll(): Things[]{
     return [
       {
         id:1,
@@ -49,8 +65,10 @@ export class BorrowedItemService {
         price: 125,
         tags: ['Electronics', 'Transport', 'Vehicle'],
         imageUrl: '/assets/Images/elløbehjul.jpg',
-        ownerName: 'Jørgen Hansen',
-        ownerPhoneNumber: '12345678'
+        ownerFirstName: 'Jørgen',
+        ownerLastName: 'Hansen',
+        ownerPhoneNumber: 12345678,
+        description: ''
       },
       {
         id:2,
@@ -58,8 +76,10 @@ export class BorrowedItemService {
         price: 1700,
         tags: ['Car', 'Transport', 'Vehicle'],
         imageUrl: '/assets/Images/futurecar.jpg',
-        ownerName: 'Jørgen Hansen',
-        ownerPhoneNumber: '12345678'
+        ownerFirstName: 'Jørgen',
+        ownerLastName: 'Hansen',
+        ownerPhoneNumber: 12345678,
+        description: ''
       },
       {
         id:3,
@@ -67,8 +87,10 @@ export class BorrowedItemService {
         price: 100,
         tags: ['Electronics', 'Gardening'],
         imageUrl: '/assets/Images/hækkeklipper.jpg',
-        ownerName: 'Jørgen Hansen',
-        ownerPhoneNumber: '12345678'
+        ownerFirstName: 'Jørgen',
+        ownerLastName: 'Hansen',
+        ownerPhoneNumber: 12345678,
+        description: ''
       },
       {
         id:4,
@@ -76,8 +98,10 @@ export class BorrowedItemService {
         price: 135,
         tags: ['Electronics', 'Gardening'],
         imageUrl: '/assets/Images/plæneklipper.jpg',
-        ownerName: 'Jørgen Hansen',
-        ownerPhoneNumber: '12345678'
+        ownerFirstName: 'Jørgen',
+        ownerLastName: 'Hansen',
+        ownerPhoneNumber: 12345678,
+        description: ''
       },
       {
         id:6,
@@ -85,8 +109,10 @@ export class BorrowedItemService {
         price: 150,
         tags: ['Electronics', 'Gardening'],
         imageUrl: '/assets/Images/motorsav.jpg',
-        ownerName: 'Jørgen Hansen',
-        ownerPhoneNumber: '12345678'
+        ownerFirstName: 'Jørgen',
+        ownerLastName: 'Hansen',
+        ownerPhoneNumber: 12345678,
+        description: ''
       },
       {
         id:7,
@@ -94,8 +120,10 @@ export class BorrowedItemService {
         price: 250,
         tags: ['Camping', 'Nature'],
         imageUrl: '/assets/Images/telt.jpg',
-        ownerName: 'Jørgen Hansen',
-        ownerPhoneNumber: '12345678'
+        ownerFirstName: 'Jørgen',
+        ownerLastName: 'Hansen',
+        ownerPhoneNumber: 12345678,
+        description: ''
 
       },
 
