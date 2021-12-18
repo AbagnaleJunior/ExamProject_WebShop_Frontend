@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Things } from "../shared/models/things";
 import {Tag} from "../shared/models/tag";
+import { TagsComponent } from '../tags/tags.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,19 +22,31 @@ export class BorrowedItemService {
 
   }
 
-  getAllTags():Tag[] {
-    return [
-      {name: 'All', amount: 14},
-      {name: 'Electronics', amount: 4},
-      {name: 'Vehicle', amount: 2},
-      {name: 'Transport', amount: 2},
-      {name: 'Car', amount: 1},
-      {name: 'Gardening', amount: 3},
-      {name: 'Phones', amount: 0},
-      {name: 'Communication', amount: 0},
-      {name: 'Camping', amount: 1},
-      {name: 'Nature', amount: 1}
-    ]
+    getAllTags():Promise<Tag[]> {
+
+
+    return fetch('api/ProductCategory')
+    .then(response => response.json())
+    .then(data => {
+
+      // let tags:Tag[] = data;
+      // return tags
+      return <Tag[]> data;
+
+    });
+
+    // return [
+    //   {name: 'All', amount: 14},
+    //   {name: 'Electronics', amount: 4},
+    //   {name: 'Vehicle', amount: 2},
+    //   {name: 'Transport', amount: 2},
+    //   {name: 'Car', amount: 1},
+    //   {name: 'Gardening', amount: 3},
+    //   {name: 'Phones', amount: 0},
+    //   {name: 'Communication', amount: 0},
+    //   {name: 'Camping', amount: 1},
+    //   {name: 'Nature', amount: 1}
+    // ]
 
   }
 
