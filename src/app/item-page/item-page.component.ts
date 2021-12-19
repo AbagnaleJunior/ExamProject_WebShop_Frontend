@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Things} from "../shared/models/things";
+import {BorrowedItem} from "../shared/models/borrowedItem";
 import {ActivatedRoute} from "@angular/router";
 import {BorrowedItemService} from "../services/borrowedItem.service";
 
@@ -10,8 +10,10 @@ import {BorrowedItemService} from "../services/borrowedItem.service";
 })
 export class ItemPageComponent implements OnInit {
 
-  item!: Things;
-  constructor(private activatedRoute:ActivatedRoute, private borrowedItemService: BorrowedItemService) {
+  item!: BorrowedItem;
+  constructor(private activatedRoute:ActivatedRoute,
+              private borrowedItemService: BorrowedItemService) {
+
     activatedRoute.params.subscribe((params) => {
       if (params.id)
         this.item = borrowedItemService.getItemById(params.id);

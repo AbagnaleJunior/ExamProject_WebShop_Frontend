@@ -13,7 +13,9 @@ export class AuthService {
       UserArray = JSON.parse(<string>localStorage.getItem('Users'));
     }
     return UserArray.find(
-      (p: { userName: any;               // === is used instead of ==, because === means it's a strict equality operator
+      (p: { userName: any;
             password: any; }) => p.userName === user.userName && p.password === user.password);
   }
 }
+
+// === is used instead of ==, because === means it's a strict equality operator

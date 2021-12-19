@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BorrowedItemService } from "../services/borrowedItem.service";
-import { Things } from "../shared/models/things";
+import { BorrowedItem } from "../shared/models/borrowedItem";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -10,9 +10,10 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
-  items:Things[] = [];
+  items:BorrowedItem[] = [];
   userName: any;
-  constructor(private borrowedItemService:BorrowedItemService, private route:ActivatedRoute) { }
+  constructor(private borrowedItemService:BorrowedItemService,
+              private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {

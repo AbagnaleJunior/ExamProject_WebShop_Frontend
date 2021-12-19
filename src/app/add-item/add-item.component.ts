@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import {Things} from "../shared/models/things";
+import {BorrowedItem} from "../shared/models/borrowedItem";
 import {BorrowedItemService} from "../services/borrowedItem.service";
 import { Tag } from "../shared/models/tag"
 import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from "@angular/forms";

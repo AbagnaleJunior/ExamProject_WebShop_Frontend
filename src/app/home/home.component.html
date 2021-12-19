@@ -1,6 +1,7 @@
 <app-header></app-header>
 <app-search></app-search>
 <app-tags></app-tags>
+
 <app-not-found [visible]="!items || items.length <= 0" resetLinkText="Reset search"></app-not-found>
 <ul>
   <li *ngFor="let item of items">
@@ -19,3 +20,4 @@
     </a>
   </li>
 </ul>
+
