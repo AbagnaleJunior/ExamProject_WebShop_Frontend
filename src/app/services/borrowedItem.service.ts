@@ -8,10 +8,10 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class BorrowedItemService {
-/*
+
   readonly baseProductsUrl = 'api/Products';
   readonly baseProductCategoryUrl = 'api/ProductCategory';
-*/
+
 
   constructor(private http: HttpClient) { }
 
@@ -39,7 +39,7 @@ export class BorrowedItemService {
     }
   */
 
-/*
+
   getAllTags():Promise<Tag[]> {
 
     return fetch(this.baseProductCategoryUrl)
@@ -51,23 +51,22 @@ export class BorrowedItemService {
         return <Tag[]> data;
 
       });
-
-*/
-
+    }
 
 
-  getAllTags(): Tag[] {
-    return [
-      {name: 'All', amount: 14},
-      {name: 'Electronics', amount: 4},
-      {name: 'Vehicle', amount: 2},
-      {name: 'Transport', amount: 2},
-      {name: 'Car', amount: 1},
-      {name: 'Gardening', amount: 3},
-      {name: 'Camping', amount: 1},
-      {name: 'Nature', amount: 1}
-    ]
-  }
+
+  // getAllTags(): Tag[] {
+  //   return [
+  //     {name: 'All', amount: 14},
+  //     {name: 'Electronics', amount: 4},
+  //     {name: 'Vehicle', amount: 2},
+  //     {name: 'Transport', amount: 2},
+  //     {name: 'Car', amount: 1},
+  //     {name: 'Gardening', amount: 3},
+  //     {name: 'Camping', amount: 1},
+  //     {name: 'Nature', amount: 1}
+  //   ]
+  // }
 
   getAllItemsByTag(tag: string): BorrowedItem[] {
     return tag == "All"?
